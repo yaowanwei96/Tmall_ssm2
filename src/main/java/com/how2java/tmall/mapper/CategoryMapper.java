@@ -5,6 +5,7 @@ import com.sun.tools.javac.util.List;
 /**
  * Created by Administrator on 2017/12/26.
  */
-public interface CategoryMapper {
-    List<Category> list();
+public abstract class CategoryMapper {
+
+    public abstract List<Category> list();
 }
