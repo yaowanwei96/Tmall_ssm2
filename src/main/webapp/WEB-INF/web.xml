@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
          version="2.5">
 
-  <!-- spring的配置文件-->
+  <!-- spring的配置文件为classpath下的applicationContext.xml-->
   <context-param>
     <param-name>contextConfigLocation</param-name>
     <param-value>classpath:applicationContext.xml</param-value>
@@ -13,7 +13,7 @@
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
 
-  <!--中文过滤器-->
+  <!--设置中文过滤器-->
   <filter>
     <filter-name>CharacterEncodingFilter</filter-name>
     <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -31,7 +31,7 @@
   <servlet>
     <servlet-name>mvc-dispatcher</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-    <!-- spring mvc的配置文件 -->
+    <!-- spring mvc的配置文件为classpath下的springMVC.xml -->
     <init-param>
       <param-name>contextConfigLocation</param-name>
       <param-value>classpath:springMVC.xml</param-value>

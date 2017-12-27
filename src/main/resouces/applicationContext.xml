@@ -8,7 +8,7 @@
     <context:annotation-config />
     <context:component-scan base-package="com.how2java.tmall.service" />
 
-    <!-- 导入数据库配置文件 -->
+    <!-- 导入数据库配置文件;指定对jdbc.properties的引用 -->
     <context:property-placeholder location="classpath:jdbc.properties"/>
     <!-- 配置数据库连接池 配置数据源 -->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -42,7 +42,7 @@
                   value="20" />
     </bean>
 
-    <!--Mybatis的SessionFactory配置-->
+    <!--Mybatis的SessionFactory配置，其中声明了别名，并且-->
     <bean id="sqlSession" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="typeAliasesPackage" value="com.how2java.tmall.pojo" />
         <property name="dataSource" ref="dataSource"/>
@@ -61,7 +61,7 @@
         -->
     </bean>
 
-    <!--Mybatis的Mapper文件识别 扫描mapper类-->
+    <!--Mybatis的Mapper文件识别扫描mapper类-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.how2java.tmall.mapper"/>
     </bean>
